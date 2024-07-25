@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Teacher", sans-serif;
+  animation: changeGradient 10s linear infinite;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% 55% 20%;
+}
+header,
+main,
+footer,
+aside {
+  padding: 2vw;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  height: 20px;
+  width: 20px;
+  rotate: 50deg;
+  background-color: black;
+}
+.logo:hover {
+  rotate: 90deg;
+  border-radius: 4px;
+  transition-duration: 0.5s;
+}
+li {
+  list-style-type: none;
+  color: white;
+  cursor: pointer;
+}
+li:first-child {
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: black;
+}
+/* Main Styling */
+main {
+  font-size: 4rem;
+  letter-spacing: 7px;
+}
+svg {
+  height: 60px;
+  background-color: transparent;
+  position: relative;
+  left: 615px;
+  bottom: 265px;
+  color: white;
+}
+svg:first-child {
+  height: auto;
+  position: relative;
+  left: 720px;
+  bottom: 250px;
+}
+
+::selection {
+  background-color: red;
+  color: white;
+}
+aside {
+  grid-column: 2;
+  grid-row: 1/-1;
+}
+aside video {
+  height: 100%;
+  width: 100%;
+  padding-right: 5vw;
+  object-fit: cover;
+}
+/* Footer */
+footer {
+  width: 80%;
+}
+/* MARK: Responsive */
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 30% 15% 30%;
+  }
+  .aside {
+    grid-column: 1;
+    grid-row: 4;
+    padding: 0;
+  }
+}
+@keyframes changeGradient {
+    0% {
+        background: linear-gradient(45deg, #ff8a00, #e52e71);
+    }
+    50% {
+        background: linear-gradient(135deg, #ff8a00, #e52e71);
+    }
+    100% {
+        background: linear-gradient(225deg, #ff8a00, #e52e71);
+    }
+}
